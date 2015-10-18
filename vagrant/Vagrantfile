@@ -2,12 +2,12 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.box = "precise64"
+  config.vm.box = "zendsrv2"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-  config.vm.forward_port 80, 8080
-  config.vm.forward_port 10081, 10081
-  config.vm.forward_port 10082, 10082
+  config.vm.forward_port 80, 8081
+  #config.vm.forward_port 10083, 10083
+  config.vm.forward_port 10084, 10084
 
   config.vm.share_folder "v-web-app", "/home/vagrant/app", "../app"
 

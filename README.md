@@ -1,7 +1,7 @@
-# Zend Server 6 Vagrant Box
+# Zend Server 8.5 Vagrant Box
 
 This Vagrant setup configures an Ubuntu 12.04 (Precise) 64-bit box with Zend
-Server 6 and PHP 5.4.
+Server 8.5.1 and PHP 5.5.26.
 
 ## Quick Start
 
@@ -12,8 +12,8 @@ Run `vagrant up` from the `vagrant` directory, eg
 ## Forwarded Ports
 
 * 8080 => 80 (Webapp)
-* 10081 => 10081 (Zend Server Console)
-* 10082 => 10082 (Zend Server HTTPS Console)
+* 10084 => 10084 (Zend Server Console)
+* 10085 => 10085 (Zend Server HTTPS Console)
 
 ## Shared Folders
 

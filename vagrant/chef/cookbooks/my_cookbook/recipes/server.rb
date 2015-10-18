@@ -4,17 +4,23 @@ execute "install zend key" do
 end
 
 execute "install zend repo" do
-  command "echo 'deb http://repos.zend.com/zend-server/6.0/deb_ssl1.0 server non-free' >> /etc/apt/sources.list"
-  not_if "grep 'http://repos.zend.com/zend-server/6.0/deb_ssl1.0' -c /etc/apt/sources.list"
+  command "echo 'deb http://repos.zend.com/zend-server/8.5.1/deb_ssl1.0 server non-free' >> /etc/apt/sources.list"
+  not_if "grep 'http://repos.zend.com/zend-server/8.5.1/deb_ssl1.0' -c /etc/apt/sources.list"
 end
 
 execute "update apt" do
   command "apt-get update -q -y"
 end
 
-package "zend-server-php-5.4"
-package "apache2-mpm-itk"
-package "curl"
+
+package "zend-base"
+package "zend-server-php-5.5-common"
+package "libapache2-mod-php-5.5-zend-server"
+package "zend-server-php-5.5"
+package "php-5.5-dev-zend-server"
+package "php-5.5-common-extensions-zend-server"
+package "php-5.5-extra-extensions-zend-server"
+package "lighttpd-zend-server"
 
 execute "install composer" do
   command "curl -sS https://getcomposer.org/installer | /usr/local/zend/bin/php -- --install-dir=/usr/local/bin"
